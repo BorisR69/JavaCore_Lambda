@@ -7,12 +7,11 @@ public class Calculator {
     BinaryOperator<Integer> minus = (x, y) -> x - y;
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
     BinaryOperator<Integer> devide = (x, y) -> { // проверка деления на 0
-                                                   try {
-                                                      return x / y;
-                                                   } catch (ArithmeticException e) {
-                                                       System.out.print("Невозможно деление на ");
-                                                   }
+                                                   if (y ==0) {
                                                        return 0;
+                                                   } else {
+                                                       return x / y;
+                                                   }
                                                 };
     //UnaryOperator для произведения математических операций над одним числом
     UnaryOperator<Integer> pow = x -> x * x;
